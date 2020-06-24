@@ -1,0 +1,9 @@
+*.pkl
+*.dat
+.DS_Store
+.AppleDouble
+.LSOverride
+.idea
+
+data
+
