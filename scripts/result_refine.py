@@ -1,36 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Module imports
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from pathlib import Path
-import pickle
 import json
-from collections import OrderedDict
-from scipy import stats
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, AdaBoostClassifier, GradientBoostingClassifier
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.decomposition import PCA
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import StratifiedKFold
-from sklearn.manifold import LocallyLinearEmbedding
-from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score
-from scipy.stats import skew, kurtosis
-from sklearn.model_selection import learning_curve
-from sklearn.preprocessing import StandardScaler
-from xgboost import XGBClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.linear_model import LogisticRegression
-from mlxtend.classifier import StackingClassifier
+from pathlib import Path
+
+import pandas as pd
 
 
 def parse_param(param):
@@ -71,6 +45,7 @@ def parse_global(global_param):
     result['test size'] = param_dict['Test size']
     return pd.Series(result)
 
+
 def parse_dataset(ds_desc):
     """
     To be applied to pandas Series objects
@@ -106,10 +81,8 @@ def parse_dataset(ds_desc):
 
     return pd.Series(result)
 
-def main():
-    root = Path('/tmp/working/fang/end2end_run/')
-    files = root.glob('*/*.csv')
 
+def main():
     root = Path('/tmp/working/fang/end2end_run/')
     for f in root.glob('*/*.csv'):
         if f.parent.name == 'baseline_ds_models_2':
@@ -118,9 +91,9 @@ def main():
             continue
         print(f)
         new_path = f.parent / (str(f.stem) + '_parsed.csv')
-        # if new_path.is_file():
-        #     print('Skipping parsed result: {}'.format(f.name))
-        #     continue  # skipping parsed
+        if new_path.is_file():
+            print('Skipping parsed result: {}'.format(f.name))
+            continue  # skipping parsed
         df = pd.read_csv(f.absolute())
         global_df = df['Global params'].apply(parse_global)
         param_df = df['Parameters'].apply(parse_param)
