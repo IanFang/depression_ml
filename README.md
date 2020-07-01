@@ -5,6 +5,12 @@ depression
 
 # Usage
 
+Use Jupyter notebooks (.ipynb files) to load data, transform data, and explore
+models.
+
+Use scripts in grid_search directory to batch run combinations of data, and
+model configurations.
+
 # Prerequisites
 
 + Python 3.6+
@@ -19,6 +25,14 @@ depression
 + mlxtend
 
 # List of directories
+
++ data
+
+Data and results.
+
++ grid_search
+
+Script to perform batch grid search. Script to parse results.
 
 # Contributors
 
