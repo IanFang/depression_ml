@@ -1,19 +1,50 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+"""
+Parse grid run results to a more structured format
+
+Take grid run results in CSV files
+Generate <original_name>_parsed.csv files to contain parsed results
+"""
+
+
 import json
 from pathlib import Path
 
 import pandas as pd
-
+from mlxtend.classifier import StackingClassifier
+from sklearn.decomposition import PCA
+from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, AdaBoostClassifier, \
+    GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.svm import SVC, LinearSVC
+from xgboost import XGBClassifier
 
 def parse_param(param):
     """
     To be applied to pandas Series objects
     :return: a series of 'classifier name', 'dim reducer', 'dim reduced to', 'classifier params'
     """
+
     result = dict()
-    param_dict = eval(param)
+    try:
+        param_dict = eval(param)
+    except:
+#         print('Stacking model results caused parse error')
+        result['classifier name'] = 'Stacking'
+        result['dim reducer'] = 'None'
+        result['dim reduced to'] = -1
+        result['classifier params'] = 'None'
+        return pd.Series(result)
+    
     result['classifier name'] = param_dict['cls'].__class__.__name__
     if 'dim_red' not in param_dict or param_dict['dim_red'] is None:
         result['dim reducer'] = 'None'
@@ -83,10 +114,8 @@ def parse_dataset(ds_desc):
 
 
 def main():
-    root = Path('/tmp/working/fang/end2end_run/')
+    root = Path('/tmp/working/data/results/')
     for f in root.glob('*/*.csv'):
-        if f.parent.name == 'baseline_ds_models_2':
-            continue
         if f.name.endswith('_parsed.csv'):
             continue
         print(f)
@@ -95,8 +124,11 @@ def main():
             print('Skipping parsed result: {}'.format(f.name))
             continue  # skipping parsed
         df = pd.read_csv(f.absolute())
+#         print('Parsing global')
         global_df = df['Global params'].apply(parse_global)
+#         print('Parsing parameters')
         param_df = df['Parameters'].apply(parse_param)
+#         print('Parsing dataset')
         ds_df = df['Dataset'].apply(parse_dataset)
         result_df = pd.concat(
             [

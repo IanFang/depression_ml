@@ -1,0 +1,83 @@
+Dataset,Global params,Parameters,test_accuracy,test_precision,test_recall,test_auc
+"Stats features, center channels","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=24, tol=0.0001,
+     verbose=0)}",0.5,0.5,0.5,0.5
+"Stats features, Cz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=1,
+            oob_score=False, random_state=24, verbose=0, warm_start=False)}",0.75,1.0,0.5,0.75
+"Stats features, FCz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+       colsample_bynode=1, colsample_bytree=1, gamma=0, learning_rate=0.1,
+       max_delta_step=0, max_depth=3, min_child_weight=1, missing=None,
+       n_estimators=100, n_jobs=1, nthread=None,
+       objective='binary:logistic', random_state=0, reg_alpha=0,
+       reg_lambda=1, scale_pos_weight=1, seed=None, silent=None,
+       subsample=1, verbosity=1)}",0.75,0.6666666666666666,1.0,0.75
+"Stats features, Fz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')}",0.5,0.5,0.5,0.5
+"stats, bands feature, center channels","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': ExtraTreesClassifier(bootstrap=False, class_weight=None, criterion='gini',
+           max_depth=None, max_features='auto', max_leaf_nodes=None,
+           min_impurity_decrease=0.0, min_impurity_split=None,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=1,
+           oob_score=False, random_state=24, verbose=0, warm_start=False)}",0.5,0.5,0.5,0.5
+"stats, bands feature, Cz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=24, tol=0.0001,
+     verbose=0)}",0.5,0.5,1.0,0.5
+"stats, bands feature, FCz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}",{'cls': GaussianNB(priors=None)},0.5,0.5,0.5,0.5
+"stats, bands feature, Fz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': ExtraTreesClassifier(bootstrap=False, class_weight=None, criterion='gini',
+           max_depth=None, max_features='auto', max_leaf_nodes=None,
+           min_impurity_decrease=0.0, min_impurity_split=None,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=1,
+           oob_score=False, random_state=24, verbose=0, warm_start=False)}",0.5,0.5,0.5,0.5
+"Raw plus stats feature, center channels","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_decrease=0.0, min_impurity_split=None,
+              min_samples_leaf=1, min_samples_split=2,
+              min_weight_fraction_leaf=0.0, n_estimators=100,
+              presort='auto', random_state=24, subsample=1.0, verbose=0,
+              warm_start=False), 'dim_red': PCA(copy=True, iterated_power='auto', n_components=100, random_state=None,
+  svd_solver='auto', tol=0.0, whiten=False)}",0.25,0.3333333333333333,0.5,0.25
+"Raw plus stats feature, Cz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=0.75, n_estimators=50, random_state=24), 'dim_red': PCA(copy=True, iterated_power='auto', n_components=100, random_state=None,
+  svd_solver='auto', tol=0.0, whiten=False)}",0.0,0.0,0.0,0.0
+"Raw plus stats feature, FCz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+       colsample_bynode=1, colsample_bytree=1, gamma=0, learning_rate=0.1,
+       max_delta_step=0, max_depth=3, min_child_weight=1, missing=None,
+       n_estimators=100, n_jobs=1, nthread=None,
+       objective='binary:logistic', random_state=0, reg_alpha=0,
+       reg_lambda=1, scale_pos_weight=1, seed=None, silent=None,
+       subsample=1, verbosity=1), 'dim_red': None}",0.5,0.0,0.0,0.5
+"Raw plus stats feature, Fz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=False, random_state=24, shrinking=True,
+  tol=0.001, verbose=False), 'dim_red': None}",0.25,0.3333333333333333,0.5,0.25
+"Raw plus stats, bands feature, center channels","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': ExtraTreesClassifier(bootstrap=False, class_weight=None, criterion='gini',
+           max_depth=None, max_features='auto', max_leaf_nodes=None,
+           min_impurity_decrease=0.0, min_impurity_split=None,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=1,
+           oob_score=False, random_state=24, verbose=0, warm_start=False), 'dim_red': None}",0.5,0.0,0.0,0.5
+"Raw plus stats, bands feature, Cz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=24, tol=0.0001,
+     verbose=0), 'dim_red': None}",0.5,0.5,0.5,0.5
+"Raw plus stats, bands feature, FCz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_decrease=0.0, min_impurity_split=None,
+              min_samples_leaf=1, min_samples_split=2,
+              min_weight_fraction_leaf=0.0, n_estimators=100,
+              presort='auto', random_state=24, subsample=1.0, verbose=0,
+              warm_start=False), 'dim_red': None}",0.25,0.3333333333333333,0.5,0.25
+"Raw plus stats, bands feature, Fz channel","{""seed"": 24, ""CV"": 5, ""Test size"": 0.2, ""scoring"": {""accuracy"": ""accuracy"", ""precision"": ""precision"", ""recall"": ""recall"", ""auc"": ""roc_auc""}, ""refit"": ""accuracy""}","{'cls': LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=24, tol=0.0001,
+     verbose=0), 'dim_red': None}",0.25,0.3333333333333333,0.5,0.25

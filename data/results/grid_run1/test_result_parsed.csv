@@ -1,0 +1,17 @@
+test_accuracy,test_precision,test_recall,test_auc,CV folds,random seed,test size,classifier name,dim reducer,dim reduced to,classifier params,raw,stats features,bands features,channels
+0.5,0.5,0.5,0.5,5.0,24.0,0.2,LinearSVC,None,-1,None,no,no,no,all
+0.75,1.0,0.5,0.75,5.0,24.0,0.2,RandomForestClassifier,None,-1,None,no,no,no,Cz
+0.75,0.6666666666666666,1.0,0.75,5.0,24.0,0.2,XGBClassifier,None,-1,None,no,no,no,FCz
+0.5,0.5,0.5,0.5,5.0,24.0,0.2,KNeighborsClassifier,None,-1,None,no,no,no,Fz
+0.5,0.5,0.5,0.5,5.0,24.0,0.2,ExtraTreesClassifier,None,-1,None,no,yes,yes,all
+0.5,0.5,1.0,0.5,5.0,24.0,0.2,LinearSVC,None,-1,None,no,yes,yes,Cz
+0.5,0.5,0.5,0.5,5.0,24.0,0.2,GaussianNB,None,-1,None,no,yes,yes,FCz
+0.5,0.5,0.5,0.5,5.0,24.0,0.2,ExtraTreesClassifier,None,-1,None,no,yes,yes,Fz
+0.25,0.3333333333333333,0.5,0.25,5.0,24.0,0.2,GradientBoostingClassifier,PCA,100,None,Yes,no,no,all
+0.0,0.0,0.0,0.0,5.0,24.0,0.2,AdaBoostClassifier,PCA,100,None,Yes,no,no,Cz
+0.5,0.0,0.0,0.5,5.0,24.0,0.2,XGBClassifier,None,-1,None,Yes,no,no,FCz
+0.25,0.3333333333333333,0.5,0.25,5.0,24.0,0.2,SVC,None,-1,None,Yes,no,no,Fz
+0.5,0.0,0.0,0.5,5.0,24.0,0.2,ExtraTreesClassifier,None,-1,None,Yes,yes,yes,all
+0.5,0.5,0.5,0.5,5.0,24.0,0.2,LinearSVC,None,-1,None,Yes,yes,yes,Cz
+0.25,0.3333333333333333,0.5,0.25,5.0,24.0,0.2,GradientBoostingClassifier,None,-1,None,Yes,yes,yes,FCz
+0.25,0.3333333333333333,0.5,0.25,5.0,24.0,0.2,LinearSVC,None,-1,None,Yes,yes,yes,Fz

@@ -114,7 +114,7 @@ def main():
     grid_fields = ['params'] + metric_names
     headers = ['Dataset', 'Global params', 'Parameters'] + metric_names
     test_headers = ['Dataset', 'Global params', 'Parameters', 'test_accuracy', 'test_precision', 'test_recall', 'test_auc']
-    root = Path('/tmp/working/fang/end2end_run/baseline_ds_models_2')
+    root = Path('/tmp/working/data/results/grid_run1')
     if not root.is_dir():
         root.mkdir(parents=True)
     results_file = root / 'cv_result.csv'
@@ -123,11 +123,12 @@ def main():
     test_results = list()
 
     # Load intermediate data
-    unioned_feature_df_file = Path('/tmp/working/fang/data/unioned_feature_df.pkl')
+    data_root = Path('/tmp/working/data/processed/')
+    unioned_feature_df_file = data_root / 'rewp_step_2_unioned_feature.pkl'
     unioned_feature_df = pickle.load(unioned_feature_df_file.open('rb'))
-    unioned_df_file = Path('/tmp/working/fang/data/unioned_df.pkl')
+    unioned_df_file = data_root / 'rewp_step_2_unioned.pkl'
     unioned_df = pickle.load(unioned_df_file.open('rb'))
-    unioned_bands_feature_df_file = Path('/tmp/working/fang/data/bands_feature_df.pkl')
+    unioned_bands_feature_df_file = data_root / 'rewp_step_2_bands_feature_df.pkl'
     unioned_bands_feature_df = pickle.load(unioned_bands_feature_df_file.open('rb'))
     raw_plus_feature_df = pd.concat([unioned_df, unioned_feature_df], keys=['raw', 'feature'], axis=1)
     raw_plus_all_feature_df = pd.concat([unioned_df, unioned_feature_df, unioned_bands_feature_df],
