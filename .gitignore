@@ -1,9 +1,10 @@
-*.pkl
+# *.pkl
 *.dat
 .DS_Store
 .AppleDouble
 .LSOverride
 .idea
 
-data
+.python-version
+.ipynb_checkpoints
 
