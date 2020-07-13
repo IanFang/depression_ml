@@ -36,7 +36,7 @@ Script to perform batch grid search. Script to parse results.
 
 # Contributors
 
-+ Weikuan Yu, Ph.D., Florida State University
 + Xingang (Ian) Fang, Ph.D., Florida State University
++ Alex Alexander De Sabatino, Florida State University
 
 # License
